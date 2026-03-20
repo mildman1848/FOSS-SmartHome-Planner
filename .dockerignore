@@ -1,0 +1,14 @@
+.git
+.github
+.env
+.env.local
+config/
+data/
+logs/
+secrets/
+tmp/
+dist/
+build/
+coverage/
+__pycache__/
+*.pyc

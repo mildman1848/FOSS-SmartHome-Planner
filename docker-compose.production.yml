@@ -1,0 +1,4 @@
+services:
+  foss-smarthome-planner:
+    image: ghcr.io/mildman1848/foss-smarthome-planner:${IMAGE_TAG:-latest}
+    build: null

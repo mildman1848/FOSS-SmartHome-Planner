@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+cd /app
+exec s6-setuidgid abc python3 -m http.server "${APP_PORT:-3000}" --bind 0.0.0.0 --directory /app

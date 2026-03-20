@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+mkdir -p /config/foss-smarthome-planner /config/logs /data /run/foss-smarthome-planner
+
+if [ ! -f /config/foss-smarthome-planner/config.yml ]; then
+  cp /defaults/config.yml /config/foss-smarthome-planner/config.yml
+fi
+
+chown -R abc:abc /config /data /run/foss-smarthome-planner 2>/dev/null || true

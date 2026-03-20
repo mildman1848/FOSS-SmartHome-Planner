@@ -1,0 +1,39 @@
+services:
+  foss-smarthome-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-0.1.0}
+    image: mildman1848/foss-smarthome-planner:${IMAGE_TAG:-latest}
+    container_name: foss-smarthome-planner
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    ports:
+      - "${HOST:-127.0.0.1}:${PORT:-3000}:3000"
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      TZ: ${TZ:-Europe/Berlin}
+      APP_PORT: 3000
+      PLANNER_TITLE: ${PLANNER_TITLE:-FOSS SmartHome Planner}
+      FILE__PLANNER_ADMIN_PASSWORD: /run/secrets/planner_admin_password
+    volumes:
+      - ./config:/config
+      - ./data:/data
+      - ./logs:/config/logs
+    secrets:
+      - planner_admin_password
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+secrets:
+  planner_admin_password:
+    file: ./secrets/planner_admin_password.txt

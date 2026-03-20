@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+echo "Docker Mods hook available. No extra packages requested."

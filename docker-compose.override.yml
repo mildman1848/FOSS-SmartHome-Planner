@@ -1,0 +1,6 @@
+services:
+  foss-smarthome-planner:
+    environment:
+      HOST: 0.0.0.0
+    volumes:
+      - ./app:/app:ro

@@ -1,0 +1,23 @@
+# Local tooling
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+config/
+data/
+logs/
+tmp/
+secrets/*.txt
+!secrets/.gitkeep

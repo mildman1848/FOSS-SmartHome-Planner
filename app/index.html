@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOSS SmartHome Planner</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f5ef;
+        --surface: rgba(255, 255, 255, 0.78);
+        --text: #153243;
+        --muted: #58707d;
+        --accent: #ca6702;
+        --accent-soft: #ee9b00;
+        --line: rgba(21, 50, 67, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(238, 155, 0, 0.22), transparent 32%),
+          linear-gradient(135deg, #fefae0, var(--bg));
+      }
+
+      main {
+        width: min(880px, calc(100% - 2rem));
+        margin: 4rem auto;
+        padding: 2rem;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--surface);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 24px 80px rgba(21, 50, 67, 0.12);
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 0.95;
+      }
+
+      p {
+        max-width: 62ch;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 1rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(202, 103, 2, 0.12);
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+        color: var(--muted);
+      }
+
+      code {
+        padding: 0.1rem 0.35rem;
+        border-radius: 0.4rem;
+        background: rgba(21, 50, 67, 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="badge">Bootstrap Ready</span>
+      <h1>FOSS SmartHome Planner</h1>
+      <p>
+        This repository now contains a working starter container, bilingual docs,
+        GitHub automation, and LinuxServer-style service scaffolding for the future
+        planner application.
+      </p>
+      <ul>
+        <li>Run <code>make build</code> to build the image.</li>
+        <li>Run <code>make start</code> to start the local compose stack.</li>
+        <li>Replace this placeholder page with the real planner UI and backend.</li>
+      </ul>
+    </main>
+  </body>
+</html>
