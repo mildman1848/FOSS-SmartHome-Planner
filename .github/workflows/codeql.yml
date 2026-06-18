@@ -29,7 +29,8 @@ jobs:
         id: detect
         shell: bash
         run: |
-          if find . \( -name '*.js' -o -name '*.jsx' -o -name '*.ts' -o -name '*.tsx' \) \n            -not -path './.git/*' -not -path './node_modules/*' | grep -q .; then
+          if find . \( -name '*.js' -o -name '*.jsx' -o -name '*.ts' -o -name '*.tsx' \) \
+            -not -path './.git/*' -not -path './node_modules/*' | grep -q .; then
             echo "has_sources=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_sources=false" >> "$GITHUB_OUTPUT"
