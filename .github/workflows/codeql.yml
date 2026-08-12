@@ -23,7 +23,7 @@ jobs:
         language: [javascript]
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Detect JavaScript/TypeScript sources
         id: detect
