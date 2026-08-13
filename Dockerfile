@@ -40,6 +40,6 @@ COPY root/ /
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-  CMD wget -q -O /dev/null "http://127.0.0.1:${APP_PORT}/" || exit 1
+  CMD ["sh", "-c", "wget -q -O /dev/null \"http://127.0.0.1:${APP_PORT}/\" || exit 1"]
 
 VOLUME ["/config", "/data"]
